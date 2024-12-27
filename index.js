@@ -11,7 +11,7 @@ const { exec } = require('child_process');
         // launch a browser instance with the
         // --proxy-server flag enabled
         const browser = await puppeteer.launch({
-            //args: [`--proxy-server=${proxyURL}`],
+            args: [`--proxy-server=${proxyURL}`],
         });
         const page = await browser.newPage();
 
