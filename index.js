@@ -18,6 +18,9 @@ const { exec } = require('child_process');
         // Navega a la URL
         const url = 'https://httpbin.org/ip';
         await page.goto(url, { waitUntil: 'networkidle2' });
+        let ip = await page.evaluate(() => {
+            return document.body.innerText;
+        })
 
         // Espera 5 segundos para asegurarte de que todo está cargado
         //await new Promise(resolve => setTimeout(resolve, 5000));
@@ -25,7 +28,7 @@ const { exec } = require('child_process');
         // Toma una captura de pantalla
         await page.screenshot({ path: 'ip.png', fullPage: true });
 
-        console.log('Captura de pantalla guardada como pajar.png');
+        console.log(`Captura de pantalla guardada como pajar ${ip}.png`);
 
         // Cierra el navegador
         await browser.close();
