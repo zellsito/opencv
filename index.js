@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 (async () => {
     try {
     // free proxy server URL
-        const proxyURL = 'socks5://localhost:9050';
+        const proxyURL = 'socks4://localhost:9050';
 
         // launch a browser instance with the
         // --proxy-server flag enabled
@@ -16,7 +16,7 @@ const { exec } = require('child_process');
         const page = await browser.newPage();
 
         // Navega a la URL
-        const url = 'https://cualesmiip.com/';
+        const url = 'https://httpbin.org/ip';
         await page.goto(url, { waitUntil: 'networkidle2' });
 
         // Espera 5 segundos para asegurarte de que todo está cargado
