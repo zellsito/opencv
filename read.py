@@ -1,8 +1,17 @@
 import cv2
 import numpy as np
+import sys
+
+# Verificar que se pasaron los parámetros necesarios
+if len(sys.argv) < 2:
+    print("Error: Debes proporcionar el nombre del archivo de imagen.")
+    exit()
+
+# Obtener el nombre del archivo de imagen desde los parámetros
+img_path = sys.argv[1]
 
 # Cargar la imagen y la plantilla
-img_rgb = cv2.imread('pajar2.png')
+img_rgb = cv2.imread(img_path)
 template = cv2.imread('aguja.png', 0)
 
 # Verificar si las imágenes se cargaron correctamente
