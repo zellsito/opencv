@@ -30,7 +30,7 @@ const { exec } = require('child_process');
         // Cierra el navegador
         await browser.close();
         // Comando para ejecutar el script Python
-        exec('python read.py', (error, stdout, stderr) => {
+        exec('python3 read.py', (error, stdout, stderr) => {
           if (error) {
               console.error(`exec error: ${error}`);
               return;
